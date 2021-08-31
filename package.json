@@ -2,10 +2,15 @@
   "name": "ts-node-canil",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "repository": "https://github.com/alissonrsantos/ts-node-canil.git",
   "author": "alissonrsantos <romao.portfolio@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "start": "node dist/server.js",
+    "postinstall": "tsc && copyfiles -u 1 src/**/*.mustache dist/",
     "dev": "nodemon -e ts,json,mustache src/server.ts"
   },
   "dependencies": {
@@ -20,6 +25,7 @@
     "@types/node": "^16.7.8",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.24.2",
